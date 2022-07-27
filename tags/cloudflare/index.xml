@@ -16,7 +16,8 @@
       <pubDate>Wed, 27 Jul 2022 00:00:00 +0000</pubDate>
       
       <guid>https://dylanj.xyz/posts/how-i-made-this-blog/</guid>
-      <description>Plan of Attack When evaluating options for staring a blog I wanted something that was fast, free, and easy to setup CI / CD for. GitHub pages easily ticks both the free and easy to setup CI / CD boxes but it can be a bit slow to respond. To solve the speed issue we can stick cloudflare in front of GitHub to leverage their CDN caching ensuring that response times were fast.</description>
+      <description>Plan of Attack When evaluating options for starting a blog I wanted something that was fast, free, and easy to setup CI / CD for. GitHub Pages ticks both the free and easy boxes but it can be a bit slow to respond. To solve the speed issue I stuck cloudflare in front of GitHub to leverage its CDN caching, ensuring that response times are fast.
+┌ │ │ │ └ ┌ │ └ ─ ─ ─ ─ ─ d ─ ─ U ─ ─ y ─ ─ s ─ ─ l ─ ─ e ─ ─ G a ─ ─ r ─ ─ i n ─ ─ ─ ─ t r ─ ┐ ├ ┘ ─ H j ─ ─ ─ u o ─ ─ ─ b h ─ ─ ─ n ─ ─ ─ R s ─ ─ ─ e t ─ ┌ │ ► │ └ ─ p o ─ ─ ─ ─ o n ─ ─ C N ─ ─ s .</description>
     </item>
     
   </channel>
