@@ -26,7 +26,7 @@ languages:
           series: series
         menu:
             main:
-                - name: Archive
+                - name: Archives
                   url: archives
                   weight: 5
                 - name: Search
@@ -69,29 +69,31 @@ params:
     images: ["papermod-cover.png"]
 
     profileMode:
-        enabled: false
-        title: PaperMod
-        imageUrl: "#"
-        imageTitle: my image
-        # imageWidth: 120
-        # imageHeight: 120
+        enabled: true
+        title: "Hi there 👋" # optional default will be site title
+        subtitle: "Welcome to my blog"
+        imageUrl: "https://avatars.githubusercontent.com/u/5708800?v=4" # optional
+        imageTitle: "<title of image as alt>" # optional
+        imageWidth: 120 # custom size
+        imageHeight: 120 # custom size
         buttons:
-            - name: Archives
-              url: archives
-            - name: Tags
-              url: tags
+          - name: Archives
+            url: "/archives"
+          - name: Search
+            url: "/search"
+          - name: Projects
+            url: /projects
 
-    homeInfoParams:
-        Title: "Hi there 👋"
-        Content: >
-           Welcome to my Blog
+    socialIcons: # optional
+      - name: "github"
+        url: "https://github.com/DylanRJohnston"
+      - name: "linkedin"
+        url: "https://www.linkedin.com/in/dylanrjohnston/"
 
-    socialIcons:
-        - name: github
-          url: "https://github.com/dylanrjohnston"
-        - name: LinkedIn
-          url: "https://www.linkedin.com/in/dylanrjohnston/"
-
+    editPost:
+        URL: "https://github.com/dylanrjohnston/dylanrjohnston.github.io/tree/master/content"
+        Text: "Suggest Changes" # edit text
+        appendFilePath: true 
     # label:
     #     text: "Home"
     #     icon: icon.png
