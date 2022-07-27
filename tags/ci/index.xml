@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>dylanj.xyz</title>
-    <link>https://dylanj.xyz/</link>
-    <description>Recent content on dylanj.xyz</description>
+    <title>ci on dylanj.xyz</title>
+    <link>https://dylanj.xyz/tags/ci/</link>
+    <description>Recent content in ci on dylanj.xyz</description>
     <image>
       <url>https://dylanj.xyz/papermod-cover.png</url>
       <link>https://dylanj.xyz/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 27 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dylanj.xyz/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 27 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dylanj.xyz/tags/ci/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How I Made This Blog</title>
       <link>https://dylanj.xyz/posts/how-i-made-this-blog/</link>
@@ -17,27 +17,6 @@
       
       <guid>https://dylanj.xyz/posts/how-i-made-this-blog/</guid>
       <description>Plan of Attack When evaluating options for staring a blog I wanted something that was fast, free, and easy to setup CI / CD for. GitHub pages easily ticks both the free and easy to setup CI / CD boxes but it can be a bit slow to respond. To solve the speed issue we can stick cloudflare in front of GitHub to leverage their CDN caching ensuring that response times were fast.</description>
-    </item>
-    
-    
-    <item>
-      <title>Projects</title>
-      <link>https://dylanj.xyz/projects/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://dylanj.xyz/projects/</guid>
-      <description>Works in Progress
-Tattoo Roguelike built with Rust + WASM WebGL Julia Fractal NixOS System Configurations VR Fractal Explorer Drag and Drop Workout Builder SplitWise -&amp;gt; YNAB Connector </description>
-    </item>
-    
-    
-    <item>
-      <title>Talks</title>
-      <link>https://dylanj.xyz/talks/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://dylanj.xyz/talks/</guid>
-      <description>NixOS and more to come&amp;hellip;</description>
     </item>
     
   </channel>

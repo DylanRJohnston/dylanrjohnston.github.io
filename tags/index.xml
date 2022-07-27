@@ -1,1 +1,68 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tags on Blog</title><link>https://dylanj.xyz/tags/</link><description>Recent content in Tags on Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://dylanj.xyz/tags/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on dylanj.xyz</title>
+    <link>https://dylanj.xyz/tags/</link>
+    <description>Recent content in Tags on dylanj.xyz</description>
+    <image>
+      <url>https://dylanj.xyz/papermod-cover.png</url>
+      <link>https://dylanj.xyz/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 27 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dylanj.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>actions</title>
+      <link>https://dylanj.xyz/tags/actions/</link>
+      <pubDate>Wed, 27 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylanj.xyz/tags/actions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cd</title>
+      <link>https://dylanj.xyz/tags/cd/</link>
+      <pubDate>Wed, 27 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylanj.xyz/tags/cd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ci</title>
+      <link>https://dylanj.xyz/tags/ci/</link>
+      <pubDate>Wed, 27 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylanj.xyz/tags/ci/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cloudflare</title>
+      <link>https://dylanj.xyz/tags/cloudflare/</link>
+      <pubDate>Wed, 27 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylanj.xyz/tags/cloudflare/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>github</title>
+      <link>https://dylanj.xyz/tags/github/</link>
+      <pubDate>Wed, 27 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylanj.xyz/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://dylanj.xyz/tags/hugo/</link>
+      <pubDate>Wed, 27 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylanj.xyz/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
