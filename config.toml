@@ -1,6 +1,0 @@
-baseURL = "https://dylanj.xyz/"
-languageCode = "en-us"
-title = "Blog"
-theme = "m10c"
-
-[[params]]

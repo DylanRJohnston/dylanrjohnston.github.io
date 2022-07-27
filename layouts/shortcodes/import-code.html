@@ -1,0 +1,4 @@
+{{- $file := .Get "file" }}
+{{- $lang := .Get "lang" }}
+{{- $content := $file  | readFile }}
+{{highlight $content $lang}}
