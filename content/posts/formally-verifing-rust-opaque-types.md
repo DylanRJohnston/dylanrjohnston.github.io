@@ -9,9 +9,9 @@ tags: ["rust", "type theory", "formal verification"]
 
 The other day I was reading [this blog post](https://varkor.github.io/blog/2018/07/03/existential-types-in-rust.html) covering existential types in Rust (also known as `impl Trait` or opaque types). In that blog post, the author makes the following claim.
 
-> We’re going to have to take a slight diversion into type theory here because it motivates a result that is perhaps intuitive. The following proposition holds in intuitionistic logic: ((exists x. P(x)) -> Q) ⇔ (forall x. (P(x) -> Q)), which means that according to the Curry–Howard Correspondence, it also holds when considering the proposition as a type.
+> We’re going to have to take a slight diversion into type theory here because it motivates a result that is perhaps intuitive. The following proposition holds in intuitionistic logic: ((∃ x. P(x)) → Q) ⇔ (∀ x. (P(x) → Q)), which means that according to the Curry–Howard Correspondence, it also holds when considering the proposition as a type.
 
-In particular the `((exists x. P(x)) -> Q) ⇔ (forall x. (P(x) -> Q))` caught my eye. While I was working for [Originate](https://www.originate.com/) in San Francisco back in 2017 I used my 20% time project to study Benjamin C. Pierce's excellent [Software Foundations](https://softwarefoundations.cis.upenn.edu/) series which teaches how to structure and formally verify software using the Coq Proof Assistant [(yes, it's pronounced exactly how think, 🙄)](https://www.theregister.com/2021/06/15/coq_programming_language_change/). It completely changed the way I look at programming for the better but it's not a skill that I get to practice regularly and as you get older you have to either use it or lose it. So I thought I'd try my hand at seeing if I remembered enough of Coq to be able to prove the above statement.
+In particular the `((∃ x. P(x)) → Q) ⇔ (∀ x. (P(x) → Q))` caught my eye. While I was working for [Originate](https://www.originate.com/) in San Francisco back in 2017 I used my 20% time project to study Benjamin C. Pierce's excellent [Software Foundations](https://softwarefoundations.cis.upenn.edu/) series which teaches how to structure and formally verify software using the Coq Proof Assistant [(yes, it's pronounced exactly how think, 🙄)](https://www.theregister.com/2021/06/15/coq_programming_language_change/). It completely changed the way I look at programming for the better but it's not a skill that I get to practice regularly and as you get older you have to either use it or lose it. So I thought I'd try my hand at seeing if I remembered enough of Coq to be able to prove the above statement.
 
 # Trait Dispatch in Rust
 
@@ -151,7 +151,7 @@ pub fn process(
 ) -> Result<()>
 ```
 
-But how to understand what `impl Trait` means? One way to understand it is it's saying that there exists a type (unnamed) that implements the trait, the fact that it's unnamed is why `impl Trait` is often referred to as **opaque types**, or **existential types**. We're taking for granted that a type, some type, exists that satisfies this trait, but is it always safe to take the prior generic function and transform it into the existential form and vice versa? The introductory paragraph claims that it always is `((exists x. P(x)) -> Q) ⇔ (forall x. (P(x) -> Q))`, but let's not take some guy's word for it, we can do better! Let's prove it!
+But how to understand what `impl Trait` means? One way to understand it is it's saying that there exists a type (unnamed) that implements the trait, the fact that it's unnamed is why `impl Trait` is often referred to as **opaque types**, or **existential types**. We're taking for granted that a type, some type, exists that satisfies this trait, but is it always safe to take the prior generic function and transform it into the existential form and vice versa? The introductory paragraph claims that it always is `((∃ x. P(x)) → Q) ⇔ (∀ x. (P(x) → Q))`, but let's not take some guy's word for it, we can do better! Let's prove it!
 
 # Coq
 
@@ -453,6 +453,6 @@ Qed.
 
 And there you go, we've formally verified that our transformation from generic arguments with trait bounds into existential `impl Trait` arguments is always valid. Of course, Rust would not have implemented the feature had it not made sense, but I think it's gratifying to be able to prove such a cryptic statement
 
-> We’re going to have to take a slight diversion into type theory here because it motivates a result that is perhaps intuitive. The following proposition holds in intuitionistic logic: ((exists x. P(x)) -> Q) ⇔ (forall x. (P(x) -> Q)), which means that according to the Curry–Howard Correspondence, it also holds when considering the proposition as a type.
+> We’re going to have to take a slight diversion into type theory here because it motivates a result that is perhaps intuitive. The following proposition holds in intuitionistic logic: ((∃ x. P(x)) → Q) ⇔ (∀ x. (P(x) → Q)), which means that according to the Curry–Howard Correspondence, it also holds when considering the proposition as a type.
 
 Hopefully, this has given you a bit of a taste of how to reason when it comes to formally verify programs which is such an alien style of programming. I've always likened it to playing with Legos where the bricks are parts of your program. You know the final shape you want, you just have to keep exploring how they combine to get the shape you want.
