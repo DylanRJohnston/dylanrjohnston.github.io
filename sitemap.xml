@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://dylanj.xyz/</loc>
+    <lastmod>2022-08-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dylanj.xyz/tags/formal-verification/</loc>
+    <lastmod>2022-08-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dylanj.xyz/posts/formally-verifing-rust-opaque-types/</loc>
+    <lastmod>2022-08-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dylanj.xyz/posts/</loc>
+    <lastmod>2022-08-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dylanj.xyz/tags/rust/</loc>
+    <lastmod>2022-08-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dylanj.xyz/tags/</loc>
+    <lastmod>2022-08-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dylanj.xyz/tags/type-theory/</loc>
+    <lastmod>2022-08-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://dylanj.xyz/tags/actions/</loc>
     <lastmod>2022-07-27T00:00:00+00:00</lastmod>
   </url><url>
@@ -14,9 +35,6 @@
     <loc>https://dylanj.xyz/tags/cloudflare/</loc>
     <lastmod>2022-07-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://dylanj.xyz/</loc>
-    <lastmod>2022-07-27T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://dylanj.xyz/tags/github/</loc>
     <lastmod>2022-07-27T00:00:00+00:00</lastmod>
   </url><url>
@@ -24,12 +42,6 @@
     <lastmod>2022-07-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://dylanj.xyz/tags/hugo/</loc>
-    <lastmod>2022-07-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://dylanj.xyz/posts/</loc>
-    <lastmod>2022-07-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://dylanj.xyz/tags/</loc>
     <lastmod>2022-07-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://dylanj.xyz/archives/</loc>

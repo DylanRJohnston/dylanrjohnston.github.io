@@ -5,11 +5,38 @@
     <link>https://dylanj.xyz/tags/</link>
     <description>Recent content in Tags on dylanj.xyz</description>
     <image>
-      <url>https://dylanj.xyz/papermod-cover.png</url>
-      <link>https://dylanj.xyz/papermod-cover.png</link>
+      <url>https://avatars.githubusercontent.com/u/5708800?v=4</url>
+      <link>https://avatars.githubusercontent.com/u/5708800?v=4</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 27 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dylanj.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dylanj.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>formal verification</title>
+      <link>https://dylanj.xyz/tags/formal-verification/</link>
+      <pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylanj.xyz/tags/formal-verification/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rust</title>
+      <link>https://dylanj.xyz/tags/rust/</link>
+      <pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylanj.xyz/tags/rust/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>type theory</title>
+      <link>https://dylanj.xyz/tags/type-theory/</link>
+      <pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylanj.xyz/tags/type-theory/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>actions</title>
       <link>https://dylanj.xyz/tags/actions/</link>

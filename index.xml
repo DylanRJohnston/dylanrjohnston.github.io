@@ -5,11 +5,21 @@
     <link>https://dylanj.xyz/</link>
     <description>Recent content on dylanj.xyz</description>
     <image>
-      <url>https://dylanj.xyz/papermod-cover.png</url>
-      <link>https://dylanj.xyz/papermod-cover.png</link>
+      <url>https://avatars.githubusercontent.com/u/5708800?v=4</url>
+      <link>https://avatars.githubusercontent.com/u/5708800?v=4</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 27 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dylanj.xyz/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dylanj.xyz/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Formally Verifying Rust&#39;s Opaque Types</title>
+      <link>https://dylanj.xyz/posts/formally-verifing-rust-opaque-types/</link>
+      <pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylanj.xyz/posts/formally-verifing-rust-opaque-types/</guid>
+      <description>Introduction The other day I was reading this blog post covering existential types in Rust (also known as impl Trait or opaque types). In that blog post, the author makes the following claim.
+We’re going to have to take a slight diversion into type theory here because it motivates a result that is perhaps intuitive. The following proposition holds in intuitionistic logic: ((exists x. P(x)) -&amp;gt; Q) ⇔ (forall x. (P(x) -&amp;gt; Q)), which means that according to the Curry–Howard Correspondence, it also holds when considering the proposition as a type.</description>
+    </item>
+    
     <item>
       <title>How I Made This Blog</title>
       <link>https://dylanj.xyz/posts/how-i-made-this-blog/</link>
