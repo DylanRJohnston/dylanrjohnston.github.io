@@ -465,7 +465,7 @@ Proof.
 No more goals.
 ```
 
-Now that we're proved all of our goals, we get to do the best thing about formal verification. The sweet three-letter acronym. **QED**.
+Now that we've proved all of our goals, we get to do the best thing about formal verification. The sweet three-letter acronym. **QED**.
 
 ```coq
 Theorem impl_trait_transform: forall (Trait: Type -> Prop) (Result: Prop),
