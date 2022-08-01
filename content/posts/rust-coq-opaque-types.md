@@ -116,19 +116,6 @@ What is the amount of space we need to leave on the stack when calling `clone()`
 
 In addition to trait methods that return Self, trait methods involving generic arguments or return values are also not "object safe" because the generic methods cannot be monomorphised behind a dynamic dispatch as it brushes up against the halting problem trying to figure how many entries of the monomorphised method are required in the vtable. If you tried to populate the vtable with every possible type in your application for each generic method it would grow enormous!
 
-So when would you want or need to use dynamic dispatch? The main reason is when the dispatch is well, dynamic! Such as when you have a collection of trait objects.
-
-```rust
-fn example() {
-    let string = "hello";
-    let integer = 3 as i32;
-
-    let collection: Vec<&dyn ToString> = vec![&string, &integer];
-}
-```
-
-It is not possible to create a collection using static dispatch
-
 ## `impl Trait`
 
 So now we understand that sometimes we cannot even use dynamic dispatch even if we don't care about the overhead from pointer chasing. We're stuck with going back to our static dispatch approach of monomorphising generic functions.
@@ -166,7 +153,18 @@ pub fn process(
 ) -> Result<()>
 ```
 
-However it is not possible to create a collection or other dynamic collection using `impl Trait`.
+With this in mind you might be asking yourself why would you ever using dynamic dispatch over static. The main reason is when the dispatch is well, dynamic! Such as when you have a collection of trait objects.
+
+```rust
+fn example() {
+    let string = "hello";
+    let integer = 3 as i32;
+
+    let collection: Vec<&dyn ToString> = vec![&string, &integer];
+}
+```
+
+Comparatively it is not possible to create a collection using `impl Trait`, nor is it possible to express this with generic constraints because the underlying opaque but concrete types are of different sizes.
 
 ```rust
 fn first() -> impl ToString {
