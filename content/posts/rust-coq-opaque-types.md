@@ -186,7 +186,7 @@ So now we have to prove
 - (forall t, (Trait(t) -> Result) -> (exists t, Trait(t)) -> Result)
 ```
 
-Applying these transformations in Coq operates via Tactics, the tactic for splitting our goal into two separate goals like this is unsurprisingly called `split`. To evaluate your proof up to where your cursor is press `CMD+Enter`. You should see the goals screen on the right update to reflect the new state of trying to prove our theorem.
+A transformation in Coq is called a Tactic. The tactic for splitting our goal into two separate goals like this is unsurprisingly called `split`. To evaluate your proof up to where your cursor is press `CMD+Enter`. You should see the goals screen on the right update to reflect the new state of trying to prove our theorem.
 
 ```coq
 Theorem test: forall (Trait: Type -> Prop) (Result: Prop),
@@ -231,7 +231,7 @@ Result: Prop
 ((exists t : Type , Trait t)  -> Result) -> forall t : Type , Trait t -> Result
 ```
 
-The way to read trying to prove a proposition like `A -> B -> C`, is that we get to assume, `A`, and `B`, when trying to prove `C`, e.g. given `A`, and `B`, prove `C`. So with the above goal, we get to assume we already have `((exists t : Type , Trait t) -> Result)` and `forall t : Type , Trait t`. The tactic that lets us do this is called `intro` for one variable at a time, or `intros` if you want to "introduce" multiple at the same time. Naming these is hard so feel free to name them however you want, but I went with
+The way to understand trying to prove an implication like `A -> B -> C`, is that we get to assume, `A`, and `B`, when trying to prove `C`. So with the above goal, we get to assume we already have the two antecedent terms `((exists t : Type , Trait t) -> Result)` and `forall t : Type , Trait t`. The tactic that lets us do this is called `intro` for one variable at a time, or `intros` if you want to "introduce" multiple at the same time. Naming these implied assumptions is hard so feel free to name them however you want or leave it blank and let Coq auto name them.
 
 ```coq
 Theorem test: forall (Trait: Type -> Prop) (Result: Prop),
@@ -254,7 +254,7 @@ trait : Trait type
 Result
 ```
 
-Propositions of `A -> B -> C` work the opposite way when they're in our assumptions. Right now our goal is to make a `Result`, in our assumptions we have an assumption `existsTrait : (exists t : Type, Trait t) -> Result` which can give us a Result if we're able to prove its antecedent. So by "applying" our assumption, we can shift our goal to trying to prove the assumptions antecedent, maybe it's a dead end and we'll have to backtrack, but Result doesn't appear anywhere else in our assumptions so it's worth a try. The tactic to do this is unsurprisingly called **apply**.
+Implications work the opposite way when they're in our assumptions. Right now our goal is to make a `Result`, in our assumptions we have an implication `existsTrait : (exists t : Type, Trait t) -> Result` which can give us a `Result` if we're able to prove its antecedent. So by "applying" our assumption, we can shift our goal to trying to prove the assumptions antecedent. Maybe it's a dead end and we'll have to backtrack, but `Result` doesn't appear anywhere else in our assumptions so it's worth a try. The tactic to do this is unsurprisingly called **apply**.
 
 ```coq
 Theorem test: forall (Trait: Type -> Prop) (Result: Prop),
@@ -278,7 +278,7 @@ trait : Trait type
 exists t : Type, Trait t
 ```
 
-Now our goal is `exists t : Type, Trait t`, much like `forall` and `intros`, there exists a tactic for dealing with existentially quantified variables, called `exists`. Although unlike intros, which give us new assumptions, `exists` demands that we prove that it exists, it is in some sense the opposite of `forall/intros`, it consumes a Proposition rather than giving us one. Luckily, after examining our assumptions, we can see that our previous `intros` gave us an assumption of kind `type : Type` that matches the kind demanded by the "exists". So we can get rid of it with `exists`.
+Now our goal is `exists t : Type, Trait t`, much like `forall` and `intros`, there exists a tactic for dealing with existentially quantified variables, called `exists`. Although unlike intros, which give us new assumptions, `exists` demands that we prove that a term exists. It is in some sense the opposite of `forall/intros`, it consumes a term rather than giving us one. Luckily, after examining our assumptions, we can see that our previous `intros` gave us an assumption of kind `type : Type` that matches the kind demanded by the "exists". So we can get rid of it with `exists`.
 
 ```coq
 Theorem test: forall (Trait: Type -> Prop) (Result: Prop),
@@ -355,7 +355,7 @@ Result
 
 At this point you might be tempted to try and apply `anyTrait` just like we did for our first goal, trying to switch the goal from result to `forall t : Type , Trait t`, however, this doesn't work with Coq complaining that `Unable to find an instance for the variable t`. This is because t is still universally quantified right now, whereas in our first goal t was existentially quantified. So we're going to need to find ourselves a `t: Type` before we can shift our goal.
 
-We also have the `existsTrait: exists t : Type, Trait t` assumption. Luckily, when we have an expression like this, we can ask Coq if this expression implies anything else that is not currently in our assumptions. We do this with the `inversion` or `destruct` tactics. Coq will auto-name the new assumptions but we can also give them meaningful names with `as`.
+We also have the `existsTrait: exists t : Type, Trait t` assumption. Luckily, when we have a term like this, we can ask Coq if this expression implies anything else that is not currently in our assumptions. We do this with the `inversion` or `destruct` tactics. Coq will auto-name the new assumptions but we can also give them meaningful names with `as`.
 
 ```coq
 Theorem test: forall (Trait: Type -> Prop) (Result: Prop),
@@ -410,7 +410,7 @@ trait : Trait t
 Trait t
 ```
 
-Now just like before, our goal matches one of our assumptions, and so we can finish up this branch with `assumption`.
+Now just like before, our goal matches one of our assumptions, so we can finish up this branch with `assumption`.
 
 ```coq
 Theorem test: forall (Trait: Type -> Prop) (Result: Prop),
@@ -453,8 +453,8 @@ Qed.
 
 # Conclusion
 
-And there you go, we've formally verified that our transformation from generic arguments with trait bounds into existential `impl Trait` arguments is always valid. Of course, Rust would not have implemented the feature had it not made sense, but I think it's gratifying to be able to prove such a cryptic statement
+And there you go, we've formally verified that our transformation from generic arguments with trait bounds into existential `impl Trait` arguments is always valid. Of course, Rust would not have implemented the feature had it not made sense, but I think it's gratifying to be able to prove such a cryptic statement like `((∃ x. P(x)) → Q) ⇔ (∀ x. (P(x) → Q))`
 
-> We’re going to have to take a slight diversion into type theory here because it motivates a result that is perhaps intuitive. The following proposition holds in intuitionistic logic: ((∃ x. P(x)) → Q) ⇔ (∀ x. (P(x) → Q)), which means that according to the Curry–Howard Correspondence, it also holds when considering the proposition as a type.
+Hopefully, this has given you a bit of a taste of how to reason when it comes to formally verify programs which is such an alien style of programming. I've always likened it to playing with Legos where the bricks are parts of your program. You know the final shape you want, you just have to keep exploring how they combine to get there.
 
-Hopefully, this has given you a bit of a taste of how to reason when it comes to formally verify programs which is such an alien style of programming. I've always likened it to playing with Legos where the bricks are parts of your program. You know the final shape you want, you just have to keep exploring how they combine to get the shape you want.
+If you'd like to explore more formal verification I'd highly recommend checking out [Software Foundations](https://softwarefoundations.cis.upenn.edu/) or Edwin Brady's [Type-Driven Development with Idris](https://www.manning.com/books/type-driven-development-with-idris).
