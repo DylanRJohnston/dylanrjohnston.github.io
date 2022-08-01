@@ -3,6 +3,8 @@ title: "Formally Verifying Rust's Opaque Types"
 date: 2022-08-01
 draft: false
 tags: ["rust", "type theory", "formal verification"]
+cover:
+  image: https://live.staticflickr.com/2069/1989724551_607a6f477b_b.jpg
 ---
 
 # Introduction
