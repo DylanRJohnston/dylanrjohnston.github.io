@@ -189,7 +189,7 @@ So now we have to prove
 A transformation in Coq is called a Tactic. The tactic for splitting our goal into two separate goals like this is unsurprisingly called `split`. To evaluate your proof up to where your cursor is press `CMD+Enter`. You should see the goals screen on the right update to reflect the new state of trying to prove our theorem.
 
 ```coq
-Theorem test: forall (Trait: Type -> Prop) (Result: Prop),
+Theorem impl_trait_transform: forall (Trait: Type -> Prop) (Result: Prop),
   ((exists t, Trait(t)) -> Result) <-> (forall t, (Trait(t) -> Result)).
 Proof.
   split.
@@ -214,7 +214,7 @@ subgoal 2 is:
 To focus on one goal at a time we use `-` to denote each branch of the proof. We'll use it to focus on the first part of our proof.
 
 ```coq
-Theorem test: forall (Trait: Type -> Prop) (Result: Prop),
+Theorem impl_trait_transform: forall (Trait: Type -> Prop) (Result: Prop),
   ((exists t, Trait(t)) -> Result) <-> (forall t, (Trait(t) -> Result)).
 Proof.
   split.
@@ -234,7 +234,7 @@ Result: Prop
 The way to understand trying to prove an implication like `A -> B -> C`, is that we get to assume, `A`, and `B`, when trying to prove `C`. So with the above goal, we get to assume we already have the two antecedent terms `((exists t : Type , Trait t) -> Result)` and `forall t : Type , Trait t`. The tactic that lets us do this is called `intro` for one variable at a time, or `intros` if you want to "introduce" multiple at the same time. Naming these implied assumptions is hard so feel free to name them however you want or leave it blank and let Coq auto name them.
 
 ```coq
-Theorem test: forall (Trait: Type -> Prop) (Result: Prop),
+Theorem impl_trait_transform: forall (Trait: Type -> Prop) (Result: Prop),
   ((exists t, Trait(t)) -> Result) <-> (forall t, (Trait(t) -> Result)).
 Proof.
   split.
@@ -257,7 +257,7 @@ Result
 Implications work the opposite way when they're in our assumptions. Right now our goal is to make a `Result`, in our assumptions we have an implication `existsTrait : (exists t : Type, Trait t) -> Result` which can give us a `Result` if we're able to prove its antecedent. So by "applying" our assumption, we can shift our goal to trying to prove the assumptions antecedent. Maybe it's a dead end and we'll have to backtrack, but `Result` doesn't appear anywhere else in our assumptions so it's worth a try. The tactic to do this is unsurprisingly called **apply**.
 
 ```coq
-Theorem test: forall (Trait: Type -> Prop) (Result: Prop),
+Theorem impl_trait_transform: forall (Trait: Type -> Prop) (Result: Prop),
   ((exists t, Trait(t)) -> Result) <-> (forall t, (Trait(t) -> Result)).
 Proof.
   split.
@@ -281,7 +281,7 @@ exists t : Type, Trait t
 Now our goal is `exists t : Type, Trait t`, much like `forall` and `intros`, there exists a tactic for dealing with existentially quantified variables, called `exists`. Although unlike intros, which give us new assumptions, `exists` demands that we prove that a term exists. It is in some sense the opposite of `forall/intros`, it consumes a term rather than giving us one. Luckily, after examining our assumptions, we can see that our previous `intros` gave us an assumption of kind `type : Type` that matches the kind demanded by the "exists". So we can get rid of it with `exists`.
 
 ```coq
-Theorem test: forall (Trait: Type -> Prop) (Result: Prop),
+Theorem impl_trait_transform: forall (Trait: Type -> Prop) (Result: Prop),
   ((exists t, Trait(t)) -> Result) <-> (forall t, (Trait(t) -> Result)).
 Proof.
   split.
@@ -306,7 +306,7 @@ Trait type
 Now you may notice that our goal exactly matches one of our assumptions. So we can use the tactic `assumption` to finish this branch of the proof! One down and one to go!
 
 ```
-Theorem test: forall (Trait: Type -> Prop) (Result: Prop),
+Theorem impl_trait_transform: forall (Trait: Type -> Prop) (Result: Prop),
   ((exists t, Trait(t)) -> Result) <-> (forall t, (Trait(t) -> Result)).
 Proof.
   split.
@@ -330,7 +330,7 @@ Result : Prop
 Now we're proving that the material equivalence holds in the other direction, and just like the first branch we use `intros` to move the left-hand side of the implications into our assumptions.
 
 ```coq
-Theorem test: forall (Trait: Type -> Prop) (Result: Prop),
+Theorem impl_trait_transform: forall (Trait: Type -> Prop) (Result: Prop),
   ((exists t, Trait(t)) -> Result) <-> (forall t, (Trait(t) -> Result)).
 Proof.
   split.
@@ -358,7 +358,7 @@ At this point you might be tempted to try and apply `anyTrait` just like we did 
 We also have the `existsTrait: exists t : Type, Trait t` assumption. Luckily, when we have a term like this, we can ask Coq if this expression implies anything else that is not currently in our assumptions. We do this with the `inversion` or `destruct` tactics. Coq will auto-name the new assumptions but we can also give them meaningful names with `as`.
 
 ```coq
-Theorem test: forall (Trait: Type -> Prop) (Result: Prop),
+Theorem impl_trait_transform: forall (Trait: Type -> Prop) (Result: Prop),
   ((exists t, Trait(t)) -> Result) <-> (forall t, (Trait(t) -> Result)).
 Proof.
   split.
@@ -385,7 +385,7 @@ Result
 Coq has broken apart `existsTrait` into its two assumptions. So now we have an assumption of kind `Type`! We can now solve the problem we had before about applying `anyTrait`.
 
 ```coq
-Theorem test: forall (Trait: Type -> Prop) (Result: Prop),
+Theorem impl_trait_transform: forall (Trait: Type -> Prop) (Result: Prop),
   ((exists t, Trait(t)) -> Result) <-> (forall t, (Trait(t) -> Result)).
 Proof.
   split.
@@ -413,7 +413,7 @@ Trait t
 Now just like before, our goal matches one of our assumptions, so we can finish up this branch with `assumption`.
 
 ```coq
-Theorem test: forall (Trait: Type -> Prop) (Result: Prop),
+Theorem impl_trait_transform: forall (Trait: Type -> Prop) (Result: Prop),
   ((exists t, Trait(t)) -> Result) <-> (forall t, (Trait(t) -> Result)).
 Proof.
   split.
@@ -436,7 +436,7 @@ No more goals.
 Now that we're proved all of our goals, we get to do the best thing about formal verification. The sweet three-letter acronym. **QED**.
 
 ```coq
-Theorem test: forall (Trait: Type -> Prop) (Result: Prop),
+Theorem impl_trait_transform: forall (Trait: Type -> Prop) (Result: Prop),
   ((exists t, Trait(t)) -> Result) <-> (forall t, (Trait(t) -> Result)).
 Proof.
   split.
