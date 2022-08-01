@@ -52,6 +52,7 @@ params:
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
     description: "Dylan R. Johnston's Blog"
     author: Dylan R. Johnston
+    pygmentsUseClasses: true
     # author: ["Me", "You"] # multiple authors
 
     defaultTheme: auto
@@ -66,7 +67,7 @@ params:
     ShowRssButtonInSectionTermList: true
     ShowToc: true
     # comments: false
-    images: ["papermod-cover.png"]
+    images: ["https://avatars.githubusercontent.com/u/5708800?v=4"]
 
     profileMode:
         enabled: true
@@ -104,7 +105,7 @@ params:
     #         SiteVerificationTag: "XYZabc"
 
     assets:
-        disableHLJS: false
+        disableHLJS: true
     #     favicon: "<link / abs url>"
     #     favicon16x16: "<link / abs url>"
     #     favicon32x32: "<link / abs url>"
@@ -124,18 +125,19 @@ params:
     #     threshold: 0.4
     #     minMatchCharLength: 0
     #     keys: ["title", "permalink", "summary", "content"]
-
+pygmentsUseClasses: true
+pygmentsCodefences: true
 markup:
-    goldmark:
-        renderer:
-            unsafe: true
     highlight:
-        noClasses: false
-        # anchorLineNos: true
-        # codeFences: true
-        # guessSyntax: true
-        # lineNos: true
-        # style: monokai
+      codeFences: true
+      guessSyntax: true
+      hl_lines: ""
+      lineNoStart: 1
+      lineNos: false
+      lineNumbersInTable: true
+      tabWidth: 2
+      noClasses: false
+      style: monokai 
 
 privacy:
     vimeo:
