@@ -12,10 +12,10 @@
     <lastBuildDate>Mon, 01 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dylanj.xyz/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Formally Verifying Rust&#39;s Opaque Types</title>
-      <link>https://dylanj.xyz/posts/formally-verifing-rust-opaque-types/</link>
+      <link>https://dylanj.xyz/posts/rust-coq-opaque-types/</link>
       <pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://dylanj.xyz/posts/formally-verifing-rust-opaque-types/</guid>
+      <guid>https://dylanj.xyz/posts/rust-coq-opaque-types/</guid>
       <description>Introduction The other day I was reading this blog post covering existential types in Rust (also known as impl Trait or opaque types). In that blog post, the author makes the following claim.
 We’re going to have to take a slight diversion into type theory here because it motivates a result that is perhaps intuitive. The following proposition holds in intuitionistic logic: ((∃ x. P(x)) → Q) ⇔ (∀ x. (P(x) → Q)), which means that according to the Curry–Howard Correspondence, it also holds when considering the proposition as a type.</description>
     </item>
