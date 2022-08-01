@@ -2,5 +2,14 @@
   "yaml.schemas": {
     "https://json.schemastore.org/github-workflow.json": "file:///Users/dylanjohnston/Workspace/personal/dylanrjohnston.github.io/.github/workflows/deploy.yml"
   },
-  "cSpell.words": ["monomorphised", "nameserver"]
+  "cSpell.words": [
+    "Legos",
+    "monomorphised",
+    "monomorphising",
+    "nameserver",
+    "println",
+    "stringable",
+    "subgoal",
+    "vtable"
+  ]
 }

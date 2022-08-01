@@ -100,7 +100,7 @@ In this case, rust doesn't copy the yell method for each type it's called with b
 
 It's called "dynamic dispatch" because we don't know which function we're going to call until runtime when we follow the vtable pointer to find the particular `to_string()` method we're going to call. Most of the time the overhead of this pointer chasing doesn't matter and your application probably has performance bottlenecks elsewhere, but sometimes every pointer dereference counts.
 
-## Object Saftey
+## Object Safety
 
 Beyond questionably legitimate concerns about performance, when you stop to think about how the compiler would layout the stack to call a dynamically dispatched function you may realise a fairly large limitation on what kinds of traits can be dynamically dispatched. **They have to be the same size!** Or more precisely, the function inputs and outputs must all be of the same size!
 
@@ -112,7 +112,7 @@ pub trait Clone {
 }
 ```
 
-What is the amount of space we need to leave on the stack when calling `clone()`? Well, it returns Self, which is whatever the type that implements clone is, so i32, i64, or String all take up different amounts of space on the stack so it's impossible for us to figure out how to layout the stack at compile time when we don't know the size of the type until runtime! This is what's known in rust as **Object Saftey**. A trait that is **not** Object Safe contains methods with either its arguments or return values that do not have a constant size across all their possible implementations and therefore it is not safe to turn them into a **Trait Object** for dynamic dispatch.
+What is the amount of space we need to leave on the stack when calling `clone()`? Well, it returns Self, which is whatever the type that implements clone is, so i32, i64, or String all take up different amounts of space on the stack so it's impossible for us to figure out how to layout the stack at compile time when we don't know the size of the type until runtime! This is what's known in rust as **Object Safety**. A trait that is **not** Object Safe contains methods with either its arguments or return values that do not have a constant size across all their possible implementations and therefore it is not safe to turn them into a **Trait Object** for dynamic dispatch.
 
 In addition to trait methods that return Self, trait methods involving generic arguments or return values are also not "object safe" because the generic methods cannot be monomorphised behind a dynamic dispatch as it brushes up against the halting problem trying to figure how many entries of the monomorphised method are required in the vtable. If you tried to populate the vtable with every possible type in your application for each generic method it would grow enormous!
 
@@ -189,7 +189,7 @@ But how to understand what `impl Trait` means? One way to understand it is it's 
 
 # Coq
 
-The Coq toolchain is a bit tricky to set up locally, but luckily we don't have to as there's an excellent [online IDE](https://coq.vercel.app/scratchpad.html) that you can use instead. To translate our position into a form that Coq understands we can write
+The Coq toolchain is a bit tricky to set up locally, but luckily we don't have to as there's an excellent [online IDE](https://coq.vercel.app/scratchpad.html) that we can use instead. I'd highly recommend following along this next section using that or another Coq IDE instead of just trying to understand it by reading. To translate our theorem into a form that Coq understands we can write
 
 ```coq
 Theorem impl_trait_transform:
@@ -205,11 +205,9 @@ forall (Trait: Type -> Prop) (Result: Prop),
   ((exists t, Trait(t)) -> Result) <-> (forall t, (Trait(t) -> Result)).
 ```
 
-Firstly `forall (Trait: Type -> Prop) (Result: Prop)` is saying that what we want to prove should be true for every possible Trait method, and any possible return value of that Trait method, we can't rely on anything true about any particular trait, our results are universal.
+The first part, `forall (Trait: Type -> Prop) (Result: Prop)` is saying that what we want to prove should be true for every possible Trait, and any possible return value, we can't rely on anything true about any particular trait, our results are universal.
 
-### split
-
-Our proposition is then broken into two halves separated by `<->`. This is known as [material equivalence](https://en.wikipedia.org/wiki/If_and_only_if), or "if and only if", which is to say the left is true, if and only if the right is true, and visa versa. Therefore to prove it, we have to prove that the left proposition implies the right proposition, and also prove that the right proposition implies the left proposition. So we started trying to prove one thing, and now we have to prove two things! This process is very common in formal verification. To prove your goal, you have to break it apart and prove sub-sections of it. To prove the `A & B` you have to prove `A`, and you have to prove `B`, to prove `A | B` you can take your pick of `A` or `B` whichever you think is easier to prove.
+The rest of our theorem is then broken into two halves separated by `<->`. This is known as [material equivalence](https://en.wikipedia.org/wiki/If_and_only_if), or "if and only if", which is to say the left is true, if and only if the right is true, and visa versa. Therefore to prove it, we have to prove that the left proposition implies the right proposition, and also prove that the right proposition implies the left proposition. So we started trying to prove one thing, and now we have to prove two things! This process is very common in formal verification. To prove your goal, you have to break it apart and prove sub-sections of it. To prove the `A & B` you have to prove `A`, and you have to prove `B`, to prove `A | B` you can take your pick of `A` or `B` whichever you think is easier to prove.
 
 So now we have to prove
 
@@ -217,6 +215,8 @@ So now we have to prove
 - (exists t, Trait(t)) -> Result) -> (forall t, (Trait(t) -> Result)
 - (forall t, (Trait(t) -> Result) -> (exists t, Trait(t)) -> Result)
 ```
+
+### tactic `split`
 
 A transformation in Coq is called a Tactic. The tactic for splitting our goal into two separate goals like this is unsurprisingly called `split`. To evaluate your proof up to where your cursor is press `CMD+Enter`. You should see the goals screen on the right update to reflect the new state of trying to prove our theorem.
 
@@ -487,6 +487,6 @@ Qed.
 
 And there you go, we've formally verified that our transformation from generic arguments with trait bounds into existential `impl Trait` arguments is always valid. Of course, Rust would not have implemented the feature had it not made sense, but I think it's gratifying to be able to prove such a cryptic statement like `((∃ x. P(x)) → Q) ⇔ (∀ x. (P(x) → Q))`
 
-Hopefully, this has given you a bit of a taste of how to reason when it comes to formally verify programs which is such an alien style of programming. I've always likened it to playing with Legos where the bricks are parts of your program. You know the final shape you want, you just have to keep exploring how they combine to get there.
+Hopefully, this has given you a bit of a taste of how to reason when it comes to formally verifying programs which is such an interesting but alien style of programming. It feels like playing with Legos where the bricks are parts of your program. You know the final shape you want, you just have to keep exploring how they combine to get there. There is a deep connection between theorem proving and metaprogramming but that's a story for another time.
 
 If you'd like to explore more formal verification I'd highly recommend checking out [Software Foundations](https://softwarefoundations.cis.upenn.edu/) or Edwin Brady's [Type-Driven Development with Idris](https://www.manning.com/books/type-driven-development-with-idris).
