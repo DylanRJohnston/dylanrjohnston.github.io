@@ -255,7 +255,7 @@ Proof.
 
 ### Tactic `intros`
 
-```coq {linenos=table}
+```coq
 1 goal
 Trait: Type -> Prop
 Result: Prop
@@ -337,7 +337,7 @@ Trait type
 
 Now you may notice that our goal exactly matches one of our assumptions. So we can use the tactic `assumption` to finish this branch of the proof! One down and one to go!
 
-```
+```coq
 Theorem impl_trait_transform: forall (Trait: Type -> Prop) (Result: Prop),
   ((exists t, Trait(t)) -> Result) <-> (forall t, (Trait(t) -> Result)).
 Proof.
@@ -351,7 +351,7 @@ Proof.
 
 ### Second Goal
 
-```
+```coq
 1 goal
 Trait : Type -> Prop
 Result : Prop
