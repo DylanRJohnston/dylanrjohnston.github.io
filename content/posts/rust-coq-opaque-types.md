@@ -116,6 +116,19 @@ What is the amount of space we need to leave on the stack when calling `clone()`
 
 In addition to trait methods that return Self, trait methods involving generic arguments or return values are also not "object safe" because the generic methods cannot be monomorphised behind a dynamic dispatch as it brushes up against the halting problem trying to figure how many entries of the monomorphised method are required in the vtable. If you tried to populate the vtable with every possible type in your application for each generic method it would grow enormous!
 
+So when would you want or need to use dynamic dispatch? The main reason is when the dispatch is well, dynamic! Such as when you have a collection of trait objects.
+
+```rust
+fn example() {
+    let string = "hello";
+    let integer = 3 as i32;
+
+    let collection: Vec<&dyn ToString> = vec![&string, &integer];
+}
+```
+
+It is not possible to create a collection using static dispatch
+
 ## `impl Trait`
 
 So now we understand that sometimes we cannot even use dynamic dispatch even if we don't care about the overhead from pointer chasing. We're stuck with going back to our static dispatch approach of monomorphising generic functions.
@@ -151,6 +164,27 @@ pub fn process(
     budget: impl Budget,
     state: impl State,
 ) -> Result<()>
+```
+
+However it is not possible to create a collection or other dynamic collection using `impl Trait`.
+
+```rust
+fn first() -> impl ToString {
+   "According to all known laws of aviation ..."
+}
+
+fn second() -> impl ToString {
+    42
+}
+
+fn example() {
+    vec![first(), second()];
+    //      Error ^^^
+    // mismatched types
+    // expected opaque type `impl ToString` (opaque type at <src/main.rs:1:15>)
+    // found opaque type `impl ToString` (opaque type at <src/main.rs:4:16>)
+    // distinct uses of `impl Trait` result in different opaque types
+}
 ```
 
 But how to understand what `impl Trait` means? One way to understand it is it's saying that there exists a type (unnamed) that implements the trait, the fact that it's unnamed is why `impl Trait` is often referred to as **opaque types**, or **existential types**. We're taking for granted that a type, some type, exists that satisfies this trait, but is it always safe to take the prior generic function and transform it into the existential form and vice versa? The introductory paragraph claims that it always is `((∃ x. P(x)) → Q) ⇔ (∀ x. (P(x) → Q))`, but let's not take some guy's word for it, we can do better! Let's prove it!
