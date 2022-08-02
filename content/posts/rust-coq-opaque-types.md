@@ -153,7 +153,7 @@ pub fn process(
 ) -> Result<()>
 ```
 
-With this in mind you might be asking yourself why would you ever using dynamic dispatch over static. The main reason is when the dispatch is well, dynamic! Such as when you have a collection of trait objects.
+With this in mind you might be asking yourself why would you ever use dynamic dispatch over static. The main reason is when the dispatch, is well, dynamic! Such as when you have a collection of trait objects.
 
 ```rust
 fn example() {
