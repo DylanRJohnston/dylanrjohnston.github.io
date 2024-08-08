@@ -33,7 +33,7 @@ It also has the effect of shifting the phase of the cycle forward by one, which 
 
 ## Ice
 
-Ice acts as a nested loop. When a player steps onto ice, that move is repeated, looped, or cycled until they step onto a non-ice block or hit a wall:
+Ice acts as a nested loop. When a player steps onto ice, that move is repeated until they step onto a non-ice block or hit a wall:
 
 ```rs
 while current_block == ICE && next_block != WALL {
@@ -43,7 +43,7 @@ while current_block == ICE && next_block != WALL {
 
 ![I left my skates at home](images/Aug-08-2024%2009-51-08.gif#center)
 
-Here the solution if there was no ice would be `↑↑→→`, but because of the looping nature of the nice we end up with `↑↑↑↑→→` and overshoot. Ice also helps us break up the cyclic symmetry of plans like `↑→↓←` which would normally just land us right back where the started. The ice instead can allow one or more of the commands to loop ensuring we don't just end up back where we started. Without ice these kinds of solutions lead to very boring puzzles.
+Here the solution if there was no ice would be `↑↑→→`, but because of the looping nature of the nice we end up with `↑↑↑↑→→` and overshoot. Ice also helps us break up the cyclic symmetry of plans like `↑→↓←`. The ice can allow one or more of the commands to loop ensuring we don't just end up back where we started. Without ice these kinds of solutions lead to very boring puzzles.
 
 ## Rotation
 
