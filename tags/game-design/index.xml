@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Rust on dylanj.xyz</title>
-    <link>https://dylanj.xyz/tags/rust/</link>
-    <description>Recent content in Rust on dylanj.xyz</description>
+    <title>Game-Design on dylanj.xyz</title>
+    <link>https://dylanj.xyz/tags/game-design/</link>
+    <description>Recent content in Game-Design on dylanj.xyz</description>
     <image>
       <url>https://avatars.githubusercontent.com/u/5708800?v=4</url>
       <link>https://avatars.githubusercontent.com/u/5708800?v=4</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 08 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://dylanj.xyz/tags/rust/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://dylanj.xyz/tags/game-design/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Designing Cyclic Puzzles for Simon Says</title>
       <link>https://dylanj.xyz/posts/making-cyclic-puzzles/</link>
@@ -18,16 +18,6 @@
       
       <guid>https://dylanj.xyz/posts/making-cyclic-puzzles/</guid>
       <description>I recently participated in the Bevy Jam 5 Game Jam, where the theme was &amp;ldquo;Cycles&amp;rdquo;. My take on this idea was Simon Says, a puzzle game where the player character must follow a series of instructions in a loop or cycle to complete the puzzle. While designing puzzles for this game, I quickly discovered a set of interesting mathematical properties underlying the solution space that I&amp;rsquo;d like to show you.</description>
-    </item>
-    
-    <item>
-      <title>Formally Verifying Rust&#39;s Opaque Types</title>
-      <link>https://dylanj.xyz/posts/rust-coq-opaque-types/</link>
-      <pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://dylanj.xyz/posts/rust-coq-opaque-types/</guid>
-      <description>Introduction The other day I was reading this blog post covering existential types in Rust (also known as impl Trait or opaque types). In that blog post, the author makes the following claim.
-We’re going to have to take a slight diversion into type theory here because it motivates a result that is perhaps intuitive. The following proposition holds in intuitionistic logic: ((∃ x. P(x)) → Q) ⇔ (∀ x. (P(x) → Q)), which means that according to the Curry–Howard Correspondence, it also holds when considering the proposition as a type.</description>
     </item>
     
   </channel>

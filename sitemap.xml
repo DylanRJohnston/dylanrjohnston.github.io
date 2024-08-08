@@ -2,22 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://dylanj.xyz/posts/making-cyclic-puzzles/</loc>
+    <lastmod>2024-08-08T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://dylanj.xyz/</loc>
-    <lastmod>2022-08-01T00:00:00+00:00</lastmod>
+    <lastmod>2024-08-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dylanj.xyz/tags/game-design/</loc>
+    <lastmod>2024-08-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dylanj.xyz/posts/</loc>
+    <lastmod>2024-08-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dylanj.xyz/tags/rust/</loc>
+    <lastmod>2024-08-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dylanj.xyz/tags/simon-says/</loc>
+    <lastmod>2024-08-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dylanj.xyz/tags/</loc>
+    <lastmod>2024-08-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://dylanj.xyz/tags/formal-verification/</loc>
     <lastmod>2022-08-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://dylanj.xyz/posts/rust-coq-opaque-types/</loc>
-    <lastmod>2022-08-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://dylanj.xyz/posts/</loc>
-    <lastmod>2022-08-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://dylanj.xyz/tags/rust/</loc>
-    <lastmod>2022-08-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://dylanj.xyz/tags/</loc>
     <lastmod>2022-08-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://dylanj.xyz/tags/type-theory/</loc>

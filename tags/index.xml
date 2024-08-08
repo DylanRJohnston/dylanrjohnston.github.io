@@ -9,9 +9,37 @@
       <link>https://avatars.githubusercontent.com/u/5708800?v=4</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 01 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dylanj.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Thu, 08 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://dylanj.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>formal verification</title>
+      <title>Game-Design</title>
+      <link>https://dylanj.xyz/tags/game-design/</link>
+      <pubDate>Thu, 08 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylanj.xyz/tags/game-design/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rust</title>
+      <link>https://dylanj.xyz/tags/rust/</link>
+      <pubDate>Thu, 08 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylanj.xyz/tags/rust/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Simon-Says</title>
+      <link>https://dylanj.xyz/tags/simon-says/</link>
+      <pubDate>Thu, 08 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylanj.xyz/tags/simon-says/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Formal Verification</title>
       <link>https://dylanj.xyz/tags/formal-verification/</link>
       <pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate>
       
@@ -20,16 +48,7 @@
     </item>
     
     <item>
-      <title>rust</title>
-      <link>https://dylanj.xyz/tags/rust/</link>
-      <pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://dylanj.xyz/tags/rust/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>type theory</title>
+      <title>Type Theory</title>
       <link>https://dylanj.xyz/tags/type-theory/</link>
       <pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate>
       
@@ -38,7 +57,7 @@
     </item>
     
     <item>
-      <title>actions</title>
+      <title>Actions</title>
       <link>https://dylanj.xyz/tags/actions/</link>
       <pubDate>Wed, 27 Jul 2022 00:00:00 +0000</pubDate>
       
@@ -47,7 +66,7 @@
     </item>
     
     <item>
-      <title>cd</title>
+      <title>Cd</title>
       <link>https://dylanj.xyz/tags/cd/</link>
       <pubDate>Wed, 27 Jul 2022 00:00:00 +0000</pubDate>
       
@@ -56,7 +75,7 @@
     </item>
     
     <item>
-      <title>ci</title>
+      <title>Ci</title>
       <link>https://dylanj.xyz/tags/ci/</link>
       <pubDate>Wed, 27 Jul 2022 00:00:00 +0000</pubDate>
       
@@ -65,7 +84,7 @@
     </item>
     
     <item>
-      <title>cloudflare</title>
+      <title>Cloudflare</title>
       <link>https://dylanj.xyz/tags/cloudflare/</link>
       <pubDate>Wed, 27 Jul 2022 00:00:00 +0000</pubDate>
       
@@ -74,7 +93,7 @@
     </item>
     
     <item>
-      <title>github</title>
+      <title>Github</title>
       <link>https://dylanj.xyz/tags/github/</link>
       <pubDate>Wed, 27 Jul 2022 00:00:00 +0000</pubDate>
       
@@ -83,7 +102,7 @@
     </item>
     
     <item>
-      <title>hugo</title>
+      <title>Hugo</title>
       <link>https://dylanj.xyz/tags/hugo/</link>
       <pubDate>Wed, 27 Jul 2022 00:00:00 +0000</pubDate>
       

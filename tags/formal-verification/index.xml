@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>formal verification on dylanj.xyz</title>
+    <title>Formal Verification on dylanj.xyz</title>
     <link>https://dylanj.xyz/tags/formal-verification/</link>
-    <description>Recent content in formal verification on dylanj.xyz</description>
+    <description>Recent content in Formal Verification on dylanj.xyz</description>
     <image>
       <url>https://avatars.githubusercontent.com/u/5708800?v=4</url>
       <link>https://avatars.githubusercontent.com/u/5708800?v=4</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
     <lastBuildDate>Mon, 01 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dylanj.xyz/tags/formal-verification/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Formally Verifying Rust&#39;s Opaque Types</title>
