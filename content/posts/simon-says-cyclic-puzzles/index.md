@@ -51,6 +51,10 @@ The rotation blocks are more challenging to map onto traditional programming con
 
 ![I meant to go this way](images/Aug-08-2024%2009-52-15.gif#center)
 
+This can get complicated fast
+
+![All according to plan](images/simon_says.gif)
+
 ## Multiple Players
 
 The multiple player characters are the first mechanic that doesn't provide new tools but instead restricts the solution space. Since the puzzle is only completed when all players are on a finish block, despite looking more complicated, they actually drastically reduce the solution space to only solutions where their finishes coincide. You could argue this is somewhat analogous to synchronization points in multi-threaded programs.
