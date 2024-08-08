@@ -1,10 +1,10 @@
 ---
-title: "Designing Cyclic Puzzles for Simon Says"
+title: Designing Cyclic Puzzles for Simon Says
 date: 2024-08-08
 draft: false
 tags: ["game-design", "rust", "simon-says"]
 cover:
-  image: https://live.staticflickr.com/2069/1989724551_607a6f477b_b.jpg
+  image: images/IMG_0054.jpeg
 ---
 
 I recently participated in the [Bevy Jam 5](https://itch.io/jam/bevy-jam-5) Game Jam, where the theme was "Cycles". My take on this idea was [Simon Says](https://itch.io/jam/bevy-jam-5/rate/2853129), a puzzle game where the player character must follow a series of instructions in a loop or cycle to complete the puzzle. While designing puzzles for this game, I quickly discovered a set of interesting mathematical properties underlying the solution space that I'd like to show you.
@@ -19,7 +19,7 @@ I've played quite a few other "programming" style puzzle games like [7 Billion H
 
 Walls may not seem like much at first glance, but they're actually incredibly powerful as they act as a kind of conditional execution. When the character tries executes a move into a wall, it essentially becomes a no-op. This acts like an implicit `if` statement or `continue` statement:
 
-```
+```rs
 if next_block == WALL {
   continue;
 }
@@ -35,9 +35,11 @@ It also has the effect of shifting the phase of the cycle forward by one, which 
 
 Ice acts as a nested loop. When a player steps onto ice, that move is repeated, looped, or cycled until they step onto a non-ice block or hit a wall:
 
+```rs
 while current_block == ICE && next_block != WALL {
   walk(direction)
 }
+```
 
 ![I left my skates at home](images/Aug-08-2024%2009-51-08.gif)
 
