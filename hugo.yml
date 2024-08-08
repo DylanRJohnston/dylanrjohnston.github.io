@@ -37,10 +37,6 @@ languages:
                 - name: Tags
                   url: tags
                   weight: 10
-                # - name: WiKi
-                #   url: https://github.com/adityatelange/hugo-PaperMod/wiki/
-                # - name: Discord
-                #   url: https://discord.gg/ahpmTvhVmp
 
 outputs:
     home:
@@ -125,7 +121,6 @@ params:
     #     threshold: 0.4
     #     minMatchCharLength: 0
     #     keys: ["title", "permalink", "summary", "content"]
-pygmentsUseClasses: true
 pygmentsCodefences: true
 markup:
     highlight:
