@@ -4,7 +4,7 @@ date: 2024-08-08
 draft: false
 tags: ["game-design", "rust", "simon-says"]
 cover:
-  image: images/IMG_0054.jpeg
+  image: https://dylanj.xyz/posts/making-cyclic-puzzles/images/IMG_0054.jpeg
 ---
 
 I recently participated in the [Bevy Jam 5](https://itch.io/jam/bevy-jam-5) Game Jam, where the theme was "Cycles". My take on this idea was [Simon Says](https://itch.io/jam/bevy-jam-5/rate/2853129), a puzzle game where the player character must follow a series of instructions in a loop or cycle to complete the puzzle. While designing puzzles for this game, I quickly discovered a set of interesting mathematical properties underlying the solution space that I'd like to show you.
