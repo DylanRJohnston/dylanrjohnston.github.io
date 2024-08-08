@@ -5,110 +5,90 @@
     <link>https://dylanj.xyz/tags/</link>
     <description>Recent content in Tags on dylanj.xyz</description>
     <image>
+      <title>dylanj.xyz</title>
       <url>https://avatars.githubusercontent.com/u/5708800?v=4</url>
       <link>https://avatars.githubusercontent.com/u/5708800?v=4</link>
     </image>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.131.0</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 08 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://dylanj.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Aug 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://dylanj.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Game-Design</title>
       <link>https://dylanj.xyz/tags/game-design/</link>
       <pubDate>Thu, 08 Aug 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://dylanj.xyz/tags/game-design/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Rust</title>
       <link>https://dylanj.xyz/tags/rust/</link>
       <pubDate>Thu, 08 Aug 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://dylanj.xyz/tags/rust/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Simon-Says</title>
       <link>https://dylanj.xyz/tags/simon-says/</link>
       <pubDate>Thu, 08 Aug 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://dylanj.xyz/tags/simon-says/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Formal Verification</title>
       <link>https://dylanj.xyz/tags/formal-verification/</link>
       <pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://dylanj.xyz/tags/formal-verification/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Type Theory</title>
       <link>https://dylanj.xyz/tags/type-theory/</link>
       <pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://dylanj.xyz/tags/type-theory/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Actions</title>
       <link>https://dylanj.xyz/tags/actions/</link>
       <pubDate>Wed, 27 Jul 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://dylanj.xyz/tags/actions/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Cd</title>
       <link>https://dylanj.xyz/tags/cd/</link>
       <pubDate>Wed, 27 Jul 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://dylanj.xyz/tags/cd/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Ci</title>
       <link>https://dylanj.xyz/tags/ci/</link>
       <pubDate>Wed, 27 Jul 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://dylanj.xyz/tags/ci/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Cloudflare</title>
       <link>https://dylanj.xyz/tags/cloudflare/</link>
       <pubDate>Wed, 27 Jul 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://dylanj.xyz/tags/cloudflare/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Github</title>
       <link>https://dylanj.xyz/tags/github/</link>
       <pubDate>Wed, 27 Jul 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://dylanj.xyz/tags/github/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Hugo</title>
       <link>https://dylanj.xyz/tags/hugo/</link>
       <pubDate>Wed, 27 Jul 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://dylanj.xyz/tags/hugo/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>
