@@ -15,9 +15,9 @@
     <atom:link href="https://dylanj.xyz/tags/rust/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Designing Cyclic Puzzles for Simon Says</title>
-      <link>https://dylanj.xyz/posts/making-cyclic-puzzles/</link>
+      <link>https://dylanj.xyz/posts/simon-says-cyclic-puzzles/</link>
       <pubDate>Thu, 08 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>https://dylanj.xyz/posts/making-cyclic-puzzles/</guid>
+      <guid>https://dylanj.xyz/posts/simon-says-cyclic-puzzles/</guid>
       <description>I recently participated in the Bevy Jam 5 Game Jam, where the theme was &amp;ldquo;Cycles&amp;rdquo;. My take on this idea was Simon Says, a puzzle game where the player character must follow a series of instructions in a loop or cycle to complete the puzzle. While designing puzzles for this game, I quickly discovered a set of interesting mathematical properties underlying the solution space that I&amp;rsquo;d like to show you.</description>
     </item>
     <item>
